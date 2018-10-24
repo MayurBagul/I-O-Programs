@@ -1,17 +1,34 @@
 package ioprograms;
 
 import java.io.*;
-public class KeyPro {
+import java.util.Properties;
+public class KeyPro 
+{
 
 	public static void main(String[] args) throws Exception
 	{
-		File f=new File("C:/Users/Admin/Desktop/Keys.txt");
+		File f=new File("C:/Users/Admin/Desktop/Keys.properties");
 		
 		FileReader fr=new FileReader(f);
 		
 		BufferedReader bf=new BufferedReader(fr);
 		
-		char[] c=new char[20];
+		Properties p=new Properties();
+		
+		p.load(bf);
+		
+		System.out.println(p.getProperty("1"));
+		System.out.println(p.getProperty("2"));
+		
+		bf.close();
+		
+		fr.close();
+		
+	}
+
+}	
+		
+	/*	char[] c=new char[20];
 		
 		String s[]=new String[20];
 		
@@ -26,8 +43,7 @@ public class KeyPro {
 		}
 		
 		
-		
-		
+
 		
 		j=0;
 		
@@ -38,13 +54,9 @@ public class KeyPro {
 			c[j]=s[i].charAt(j);
 			
 		}
-		
-	
-		
+
 		
 		bf.close();
-		fr.close();
+		fr.close();*/
 
-	}
 
-}
